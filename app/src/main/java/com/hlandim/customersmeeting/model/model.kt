@@ -4,7 +4,8 @@ data class Customer(
     val user_id: Long,
     val name: String,
     val latitude: Double,
-    val longitude: Double
+    val longitude: Double,
+    @Transient var distanceToOffice: Double
 )
 
-data class CustomersData(val customers: List<Customer>)
+data class CustomersData(var customers: List<Customer>)
