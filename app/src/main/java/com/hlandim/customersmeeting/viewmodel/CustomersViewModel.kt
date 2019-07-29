@@ -40,7 +40,7 @@ class CustomersViewModel(application: Application) : AndroidViewModel(applicatio
         compositeDisposable.clear()
     }
 
-    private fun getCustomersData() {
+    fun getCustomersData() {
         val disposable = customersRepository.getCustomers().subscribeOn(ioThread())
             .observeOn(androidThread())
             .subscribe({
